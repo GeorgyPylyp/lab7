@@ -7,6 +7,7 @@ const int Low = -100, High = 200;
 int n;
 int a[100];
 
+void nmas();
 void mas();
 void masp();
 void sum();
@@ -14,13 +15,17 @@ void minmax();
 
 int main() {
   srand(time(0));
-  printf("Введіть n: ");
-  scanf("%d", &n);
+  nmas();
   mas();
   masp();
   sum();
   minmax();
 }
+
+//кількість елементів масиву
+void nmas(){
+printf("Введіть n: ");
+  scanf("%d", &n);}
 
 // створення масиву 
 void mas() {
@@ -40,16 +45,19 @@ void masp() {
 
 // обчислення суми від'ємних елементів масиву
 void sum() {
-  int s = 0;
-  for (int i = 0; i < n; i++) {
-    if (a[i] < 0)
-      s += a[i];
+int s = 0;
+for (int i = 0; i < n; i++) {
+if (a[i] < 0){
+ s += a[i];}
+    
   }
- if( s>=0){ 
-  printf("немає від'ємних елементів\n");}
-  else {printf("Сума від'ємних елементів: %d\n", s);}
+if( s>=0){ 
+printf("немає від'ємних елементів\n");}
+else {
+printf("Сума від'ємних елементів: %d\n", s);}
 }
 
+//знаходження добутку чисел між мінімальним і максимальним
 void minmax() {
   int min = 0;
   int max = 0;
@@ -69,7 +77,7 @@ void minmax() {
     st = max;
     en = min;
   }
-for (int i = st + 1; i < en; i++) {
+for (int i = st + 1 ; i < en; i++) {
 p *= a[i];
   }
   printf("Добуток елементів між максимальним і мінімальним: %d\n", p);
